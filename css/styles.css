@@ -4,7 +4,7 @@ body {
   font-size: 16px;
   background-color: #ffffff;
   color: #434455;
-  line-height: 1.5;
+  /* line-height: 1.5; */
   letter-spacing: 0.02em;
 }
 
@@ -19,7 +19,8 @@ img {
 
 a:hover,
 a:focus,
-a:active {
+a:active,
+.header-logo.header-underline {
   color: #404bbf;
 }
 
@@ -81,6 +82,7 @@ ol {
   padding-top: 24px;
   padding-bottom: 24px;
   display: block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address {
@@ -96,6 +98,7 @@ ol {
   padding-top: 24px;
   padding-bottom: 24px;
   display: block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
@@ -116,6 +119,8 @@ ol {
 
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header-nav {
@@ -129,12 +134,37 @@ ol {
   gap: 40px;
 }
 
+.header-link.header-underline {
+  position: relative;
+}
+
+.header-link.header-underline::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  background-color: #404bbf;
+  left: 0;
+  bottom: -1px;
+  border-radius: 2px;
+}
+
 /* -----------------------1 Section Hero------------------------  */
 
 .hero {
   background-color: #2e2f42;
+  max-width: 1158px;
+  margin: 0 auto;
   padding-top: 188px;
   padding-bottom: 188px;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/hero-background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .visually-hidden {
@@ -212,6 +242,18 @@ ol {
   width: calc((100% - 72px) / 4);
 }
 
+.advantages-column {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 100%;
+  height: 112px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4fd;
+  margin-bottom: 8px;
+}
+
 /* -----------------------3 Section Our Team------------------------ */
 
 .our-team {
@@ -243,6 +285,8 @@ ol {
 .our-team-item {
   background-color: #ffffff;
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .our-team-subtitle {
@@ -262,6 +306,27 @@ ol {
 .our-team-name-position {
   padding-top: 32px;
   padding-bottom: 32px;
+}
+
+.our-team-soc-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.our-team-soc-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.our-team-soc-icon {
+  fill: #f4f4fd;
 }
 
 /* -----------------------4 Our Portfolio------------------------ */
@@ -288,7 +353,7 @@ ol {
   color: #2e2f42;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  padding-left: 16px;
+  /* padding-left: 16px; */
   margin-bottom: 8px;
 }
 
@@ -297,8 +362,8 @@ ol {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
-  padding-left: 16px;
-  padding-top: 8px;
+  /* padding-left: 16px; */
+  /* padding-top: 8px; */
 }
 
 .our-portfolio-list {
@@ -310,12 +375,36 @@ ol {
 
 .our-portfolio-item {
   width: calc((100% - 48px) / 3);
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .our-portfolio-name-category {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
   border-top: none;
+}
+
+.our-portfolio-item:hover .our-portfolio-text-hover {
+  transform: translateY(0);
+}
+
+.our-portfolio-text-hover {
+  position: absolute;
+  top: 0;
+  background-color: #4d5ae5;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  padding: 40px 32px;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms ease;
+}
+
+.our-portfolio-picture {
+  position: relative;
+  overflow: hidden;
 }
 
 /* -----------------------Footer------------------------ */
@@ -345,4 +434,36 @@ ol {
 .footer-text {
   color: #f4f4fd;
   max-width: 264px;
+}
+
+.footer-soc-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer-soc-block-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.footer-soc-icon {
+  fill: #f4f4fd;
+}
+
+.footer-blocks {
+  display: flex;
+}
+
+.footer-soc-block-list {
+  display: flex;
+  gap: 16px;
 }
