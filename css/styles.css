@@ -157,7 +157,7 @@ ol {
 
 .hero {
   background-color: #2e2f42;
-  max-width: 1448px;
+  max-width: 1440px;
   margin: 0 auto;
   padding-top: 188px;
   padding-bottom: 188px;
@@ -456,7 +456,6 @@ ol {
 .footer-soc-block-item {
   width: 40px;
   height: 40px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-icon {
@@ -466,7 +465,6 @@ ol {
 .footer-blocks {
   display: flex;
   align-items: baseline;
-  margin-right: 120px;
 }
 
 .footer-soc-block-list {
@@ -487,4 +485,12 @@ ol {
 .footer-soc-block-link:hover,
 .footer-soc-block-link:focus {
   background-color: #31d0aa;
+}
+
+.footer-soc-block-item {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-logo-block {
+  margin-right: 120px;
 }
