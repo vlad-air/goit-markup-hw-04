@@ -347,8 +347,7 @@ ol {
 .our-team-soc-link:focus {
   background-color: #404bbf;
 }
-
-/* -----------------------4 Our Portfolio------------------------ */
+/* -----------------------4 SECTION OUR PORTFOLIO------------------------ */
 
 .our-portfolio {
   padding-top: 120px;
@@ -396,6 +395,11 @@ ol {
   width: calc((100% - 48px) / 3);
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.our-portfolio-item:hover {
+  transform: translateY(0%);
 }
 
 .our-portfolio-name-category {
